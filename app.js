@@ -357,6 +357,17 @@ class PhishGuard {
 
     // Initialize charts
     initCharts() {
+        // Check if Chart.js is loaded
+        if (typeof Chart === 'undefined') {
+            console.warn('Chart.js not loaded, charts will be disabled');
+            document.querySelectorAll('.chart-card canvas').forEach(canvas => {
+                canvas.parentElement.innerHTML = '<div style="padding: 2rem; text-align: center; color: var(--text-secondary);">Charts loading...</div>';
+            });
+            // Retry after delay
+            setTimeout(() => this.retryCharts(), 2000);
+            return;
+        }
+
         // Risk Distribution Chart
         const riskCtx = document.getElementById('riskChart').getContext('2d');
         this.riskChart = new Chart(riskCtx, {
@@ -441,8 +452,20 @@ class PhishGuard {
         });
     }
 
+    // Retry initializing charts
+    retryCharts() {
+        if (typeof Chart !== 'undefined') {
+            this.initCharts();
+        }
+    }
+
     // Update charts with current data
     updateCharts() {
+        // Check if charts are initialized
+        if (!this.riskChart || !this.timelineChart) {
+            return;
+        }
+
         // Update risk distribution
         this.riskChart.data.datasets[0].data = [
             this.stats.safe,
