@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS_PhishGuard - AI-Powered Phishing Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" integrity="sha512-SIMGYRUjwY8+gKg7nn9EItdD8LCADSDfJNutF9TPrvEo86sQmFMh6MyralfIyhADlajSxqc7G0gs7+MwWF/ogQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="shield">🛡️</span>
+                <h1>MS_PhishGuard</h1>
+            </div>
+            <nav>
+                <a href="#scan">Scan</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#security">Security</a>
+                <a href="#report">Report</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2 class="glitch" data-text="AI-Powered Phishing Detection">AI-Powered Phishing Detection</h2>
+                <p class="tagline">Real-time URL analysis with hybrid Random Forest & LSTM technology</p>
+            </div>
+        </section>
+
+        <!-- Scan Section -->
+        <section id="scan" class="scan-section">
+            <div class="container">
+                <div class="scan-card">
+                    <h3>🔍 Scan URL for Threats</h3>
+                    <div class="scan-input-group">
+                        <input type="text" id="urlInput" placeholder="Enter URL to scan (e.g., https://example.com)" />
+                        <button id="scanBtn" class="btn-primary">Analyze URL</button>
+                    </div>
+                    <div id="scanResult" class="scan-result hidden"></div>
+                    <div id="scanDetails" class="scan-details hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <div class="container">
+                <h3>📊 Threat Dashboard</h3>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🔬</div>
+                        <div class="stat-value" id="totalScans">0</div>
+                        <div class="stat-label">Total Scans</div>
+                    </div>
+                    <div class="stat-card safe">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-value" id="safeCount">0</div>
+                        <div class="stat-label">Safe URLs</div>
+                    </div>
+                    <div class="stat-card suspicious">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-value" id="suspiciousCount">0</div>
+                        <div class="stat-label">Suspicious URLs</div>
+                    </div>
+                    <div class="stat-card phishing">
+                        <div class="stat-icon">🚨</div>
+                        <div class="stat-value" id="phishingCount">0</div>
+                        <div class="stat-label">Phishing Detected</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="chart-card">
+                        <h4>Risk Distribution</h4>
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Scan Timeline</h4>
+                        <canvas id="timelineChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="history-card">
+                    <h4>📜 Recent Scan History</h4>
+                    <div class="table-wrapper">
+                        <table id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>URL</th>
+                                    <th>Verdict</th>
+                                    <th>Confidence</th>
+                                    <th>Risk Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyBody">
+                                <tr>
+                                    <td colspan="5" class="no-data">No scans yet. Start by analyzing a URL above!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Practices Section -->
+        <section id="security" class="security-section">
+            <div class="container">
+                <h3>🔒 Security & Privacy</h3>
+                
+                <div class="security-grid">
+                    <div class="security-card">
+                        <h4>🛡️ Responsible Disclosure Policy</h4>
+                        <p>We take security seriously. If you discover a vulnerability in MS_PhishGuard:</p>
+                        <ul>
+                            <li>Email us at <strong>security@msphishguard.com</strong></li>
+                            <li>Include detailed steps to reproduce the issue</li>
+                            <li>Allow 90 days for us to address the vulnerability</li>
+                            <li>Do not publicly disclose until we've issued a fix</li>
+                            <li>We acknowledge and credit responsible researchers</li>
+                        </ul>
+                    </div>
+
+                    <div class="security-card">
+                        <h4>🔐 Privacy Guidelines</h4>
+                        <p>Your privacy is our priority:</p>
+                        <ul>
+                            <li><strong>Client-Side Only:</strong> All URL analysis happens in your browser</li>
+                            <li><strong>No Data Collection:</strong> We don't store or transmit your scanned URLs</li>
+                            <li><strong>Local Storage:</strong> Scan history is saved locally on your device</li>
+                            <li><strong>No Tracking:</strong> We don't use cookies or tracking scripts</li>
+                            <li><strong>Open Source:</strong> Our code is transparent and auditable</li>
+                        </ul>
+                    </div>
+
+                    <div class="security-card">
+                        <h4>⚡ Best Practices</h4>
+                        <p>Protect yourself online:</p>
+                        <ul>
+                            <li>Always verify sender identity before clicking links</li>
+                            <li>Check for HTTPS and valid SSL certificates</li>
+                            <li>Be wary of urgent or threatening messages</li>
+                            <li>Enable two-factor authentication where possible</li>
+                            <li>Keep your browser and software up to date</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Threats Section -->
+        <section id="report" class="report-section">
+            <div class="container">
+                <h3>📢 Report a Threat</h3>
+                <div class="report-card">
+                    <p>Help protect the community by reporting phishing URLs and threats.</p>
+                    <form id="reportForm" class="report-form">
+                        <div class="form-group">
+                            <label for="reportUrl">Suspicious URL</label>
+                            <input type="url" id="reportUrl" placeholder="https://suspicious-site.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="reportType">Threat Type</label>
+                            <select id="reportType" required>
+                                <option value="">Select type...</option>
+                                <option value="phishing">Phishing Attempt</option>
+                                <option value="malware">Malware Distribution</option>
+                                <option value="scam">Financial Scam</option>
+                                <option value="impersonation">Brand Impersonation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportDetails">Details (Optional)</label>
+                            <textarea id="reportDetails" rows="4" placeholder="Describe the threat..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Submit Report</button>
+                    </form>
+                    <div id="reportResult" class="report-result hidden"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MS_PhishGuard. Open Source Security Project.</p>
+            <p>⚡ Powered by AI | 🔒 Privacy-First | 🛡️ Client-Side Detection</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
