@@ -10,14 +10,14 @@
 
 <br>
 
-<img src="https://ik.imagekit.io/ptyhlytomn/MS-phishgaurd.html" alt="Dashboard Preview" width="100%" style="border-radius: 8px; box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
+<img src="https://ik.imagekit.io/ptyhlytomn/Screenshot%202025-11-20%20220401.png" width="100%" style="border-radius: 8px; box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
 
 <br>
 
 ### *Detect. Analyze. Neutralize.*
 *A zero-dependency, client-side heuristic engine for instant phishing detection.*
 
-[ 🚀 Launch Live Demo ](https://ik.imagekit.io/ptyhlytomn/M_phishgaurd%20Project%20Video.mp4) • [ 🐛 Report Bug ](https://github.com/AND-SHAL-0813/MS_PhishGuard/issues)
+[ 🚀 Launch Live Demo ](https://ik.imagekit.io/ptyhlytomn/MS-phishgaurd.html) • [ 🐛 Report Bug ](https://github.com/AND-SHAL-0813/MS_PhishGuard/issues)
 
 </div>
 
