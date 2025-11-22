@@ -53,17 +53,17 @@
 ## 📦 Installation & Usage
 Since MS_PhishGuard is architected as a lightweight client-side tool, no complex environment setup is required.
 
-# 1.Clone the Repository
+#### 1.Clone the Repository
 
 
 git clone [https://github.com/AND-SHAL-0813/MS_PhishGuard.git](https://github.com/AND-SHAL-0813/MS_PhishGuard.git)
 Initialize the System
 
-# 2.Navigate to the project directory.
+##### 2.Navigate to the project directory.
 
 Open MS-phishgaurd.html in any modern browser (Chrome/Edge/Firefox).
 
-# 3.Execute Scan
+#### 3.Execute Scan
 
 Click "ACTIVATE PHISHGUARD" to engage the threat detection engine.
 
