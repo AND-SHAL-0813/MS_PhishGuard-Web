@@ -10,7 +10,7 @@
 
 <br>
 
-<img src="https://1drv.ms/i/c/41b1e08c4e4622aa/EYIGithzHXdNhphwgGzDxwkB2zF8eEZJivYHqhDbYOvzEw?e=uGm58b" alt="Dashboard Preview" width="100%" style="border-radius: 8px; box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
+<img src="https://ik.imagekit.io/ptyhlytomn/Screenshot%202025-11-20%20220401.png" alt="Dashboard Preview" width="100%" style="border-radius: 8px; box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);">
 
 <br>
 
